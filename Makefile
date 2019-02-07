@@ -5,7 +5,7 @@ $(call require-env, user_name)
 USER_HOME ?= /home/${user_name}
 PUBLIC_HTML ?= ${USER_HOME}/public_html
 
-create-user: ${USER_HOME} ${PUBLIC_HTML} facls 
+create-user: ${USER_HOME} ${PUBLIC_HTML} facls
 
 ${USER_HOME}: require-env-user_name
 	@# https://en.wikipedia.org/wiki/Gecos_field
@@ -21,5 +21,6 @@ facls: ${PUBLIC_HTML}
 	setfacl -Rm 'd:g:maint:rwX,g:maint:rwX' ${PUBLIC_HTML}
 
 destroy-user:
+	$(call user-confirm, 'This operation will DESTROY ${USER_HOME} and can not be un-done. Continue?')
 	deluser ${user_name}
 	rm -rf ${USER_HOME}
