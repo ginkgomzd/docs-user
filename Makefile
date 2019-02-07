@@ -11,7 +11,7 @@ ${USER_HOME}: require-env-user_name require-env-user_name
 	sudo adduser --disabled-password --gecos "${user_name}"  ${user_name}
 
 ${PUBLIC_HTML}: ${USER_HOME} require-env-user_name
-	sudo mkdir ${PUBLIC_HTML}
+	test -d ${PUBCLI_HTML} || sudo mkdir ${PUBLIC_HTML}
 
 facls: ${PUBLIC_HTML} require-env-user_name
 	sudo setfacl -Rm 'mask:rwx' ${PUBLIC_HTML}
