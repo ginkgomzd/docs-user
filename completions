@@ -7,7 +7,7 @@
 _docs-user_completions()
 {
   # sed patterns to exclude targets
-  blacklist=( 'util-.*' 'require-env-.*' 'Makefile' 'completions')
+  blacklist=( 'util-.*' 'require-env-.*' 'Makefile' 'completions' )
 
   MAKE_TARGET_WORDS=$(docs-user -p --dry-run | awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' | sort | uniq )
 
