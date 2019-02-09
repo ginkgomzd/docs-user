@@ -3,7 +3,10 @@ include make-do.mk
 USER_HOME ?= /home/${user_name}
 PUBLIC_HTML ?= ${USER_HOME}/public_html
 
-create-user: ${USER_HOME} ${PUBLIC_HTML} facls
+help:
+	pandoc -t plain README.md
+
+create: ${USER_HOME} ${PUBLIC_HTML} facls
 
 ${USER_HOME}: require-env-user_name require-env-user_name
 	@# https://en.wikipedia.org/wiki/Gecos_field
