@@ -10,6 +10,7 @@ create: ${USER_HOME} ${PUBLIC_HTML} facls
 
 ${USER_HOME}: require-env-user_name require-env-user_name
 	@# https://en.wikipedia.org/wiki/Gecos_field
+	@# --disabled-password creates a user but disallows login.
 	test -d ${USER_HOME} || \
 	sudo adduser --disabled-password --gecos "${user_name}"  ${user_name}
 
