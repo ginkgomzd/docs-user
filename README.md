@@ -1,4 +1,5 @@
 ----
+
 # Docs User Utility
 
 Create (and destroy) system users for the purpose of hosting documentation.
@@ -30,6 +31,6 @@ You can also customize the behaviour by setting `PUBLIC_HTML` or `USER_HOME`.
 
 `USER_NAME=grav docs-user facls`
 
+
 ----
 This is a make-do module: https://github.com/ginkgostreet/make-do.git
-----
