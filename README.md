@@ -1,4 +1,4 @@
-
+----
 # Docs User Utility
 
 Create (and destroy) system users for the purpose of hosting documentation.
@@ -12,7 +12,7 @@ Create (and destroy) system users for the purpose of hosting documentation.
 
 Comes with command completion (via make-do). So, TAB-TAB your way to glory.
 
-Note, any operation will require the user_name variable be set. Command completion is a bit clumsy without it.
+Note, any operation will require the USER_NAME variable be set. Command completion is a bit clumsy without it being set, so exporting the variable is recommended.
 
 You can also customize the behaviour by setting `PUBLIC_HTML` or `USER_HOME`.
 
@@ -20,12 +20,16 @@ You can also customize the behaviour by setting `PUBLIC_HTML` or `USER_HOME`.
 
 ### Create a User named grav
 
-`user_name=grav docs-user create-user`
+`USER_NAME=grav docs-user create-user`
 
 ### Destroy a User named grav
 
-`user_name=grav docs-user destroy-user`
+`USER_NAME=grav docs-user destroy-user`
 
 ### Repair Permissions for public_html for the user named grav
 
-`user_name=grav docs-user facls`
+`USER_NAME=grav docs-user facls`
+
+----
+This is a make-do module: https://github.com/ginkgostreet/make-do.git
+----
